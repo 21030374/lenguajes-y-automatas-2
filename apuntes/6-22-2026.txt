@@ -1,0 +1,10 @@
+Preguntas
+Full name: Jose Angel Herrera Morales
+What field or area would you like to specialize in?: Networking and systems engineering/embedded systems
+What tools are going to use in that area?: Network devices, emulators, low level programming languages, compilers, sensors, electronics.
+What do you know about getting a job?:
+
+Rubricas de evaluacion:
+50% Portafolio
+35% Examen
+15% Proyecto
