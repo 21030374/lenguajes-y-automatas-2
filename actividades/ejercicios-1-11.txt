@@ -1,0 +1,282 @@
+HERRERA MORALES JOSE ANGEL
+21030374
+======================================================================
+Ejercicio 1 (SUMA): 10 + 5
+----------------------------------------------------------------------
+num: [0-9]
+positivo: +
+ws: [\+\r\n]
+----------------------------------------------------------------------
+lexema | token
+
+" " | ws
+10 | num
++ | positivo
+5 |  num
+
+======================================================================
+Ejercicio 2 (RESTA): 20 - 8
+----------------------------------------------------------------------
+num: [0-9]
+negativo: -
+ws: [\+\r\n] 
+----------------------------------------------------------------------
+lexema | token
+
+" " | ws
+20 | num
+- | negativo
+8 | num
+
+======================================================================
+Ejercicio 3 (ASIGNACION): x = 10
+----------------------------------------------------------------------
+idt: [a-zA-Z0-9]
+ws: [\+\r\n]
+asignacion: =
+num: [0-9]
+----------------------------------------------------------------------
+lexema | token
+
+" " | ws
+x | idt
+= | asignacion
+10 | num 
+
+====================================================================== 
+Ejercicio 4 (CONDICION): if x > 10
+----------------------------------------------------------------------
+reservada: if
+ws: [\+\r\n]
+idt: [a-zA-Z0-9]
+num: [0-9]
+comparacion: >
+----------------------------------------------------------------------
+lexema | token
+
+" " | ws
+if | reservada
+x | idt
+> | comparacion 
+10 | num
+
+======================================================================
+Ejercicio 5 (IMPRIMIR): print "Hola"
+----------------------------------------------------------------------
+idt: [a-zA-Z0-9]
+com: [""]
+ws: [\+\r\n]
+----------------------------------------------------------------------
+lexema | token
+
+print | idt
+com: "
+Hola | idt
+com: "
+
+======================================================================
+Ejercicio 6: 15 + 3 * 2
+----------------------------------------------------------------------
+num: [0-9]
+ws: [\+\r\n]
+adicion: +
+multiplicacion: *
+----------------------------------------------------------------------
+lexema | token
+
+15: num
+" ": ws
++: adicion
+" ": ws
+3: num
+" ": ws
+*: multiplicacion
+" ": ws
+2: num
+
+======================================================================
+Ejercicio 7: int total = 100
+----------------------------------------------------------------------
+reservada: int
+ws: [\+\r\n]
+idt: [a-zA-Z0-9]
+igual: =
+num: [0-9]
+----------------------------------------------------------------------
+lexema | token
+
+int | reservada
+" " | ws
+total | idt
+" " | ws
+= | igual
+" " | ws
+100 | num
+
+======================================================================
+Ejercicio 8: edad >= 18
+----------------------------------------------------------------------
+idt: [a-zA-Z0-9]
+ws: [\+\r\n]
+comparacion: >=
+num: [0-9]
+----------------------------------------------------------------------
+lexema | token
+
+edad | idt
+" " | ws
+>= | comparacion
+" " | ws
+18 | num
+
+======================================================================
+Ejercicio 9: if (edad > 17)
+----------------------------------------------------------------------
+reservada: if
+ws : [\+\r\n]
+parentesis: [(,)]
+idt: [a-zA-Z0-9]
+comparacion: >
+num: [0-9]
+----------------------------------------------------------------------
+lexema | token
+
+if | reservada
+" " | ws
+( | parentesis
+edad | idt
+" " | ws
+> | comparacion
+" " | ws
+17 | num
+) | parentesis
+ 
+======================================================================
+Ejercicio 10 print("Wenn ich das als Erste verstele, ubersetze un dem Lehrer vorlese, verdienn ich 10 Extrapunkte, zusatzlich rur
+zur Abgabe meiner Regeln und meiner Token-Tabelle");
+----------------------------------------------------------------------
+idt: [a-zA-Z0-9]
+parentesis: [()]
+str: "~[\b\r\n\t]+"
+semi: ;
+----------------------------------------------------------------------
+lexema | token
+
+print | idt
+( | parentesis
+"Wenn ich das als Erste verstele, ubersetze un dem Lehrer vorlese, verdienn ich 10 Extrapunkte, zusatzlich rur
+zur Abgabe meiner Regeln und meiner Token-Tabelle" | str
+) | parentesis
+; | semicolon
+
+======================================================================
+Ejercicio 11 (Java):
+public class Main {
+	public static void main(String[] args) {
+		int numero1 = 15;
+		int numero2 = 3;
+
+		int resultado = numero1 + numero2;
+
+		System.out.println("El resultado es: " + resultado);
+	}
+}
+----------------------------------------------------------------------
+reservada: public, class, static, void, String, int
+ws : [\+\r\n\t\n]
+idt: [a-zA-Z0-9]
+llaves: [{,}]
+parentesis: [(,)]
+corchetes: [\[,\]]
+asignacion: =
+num: [0-9]
+semicolon: ;
+suma: +
+punto: .
+str: "~[\b\r\n\t]+"
+----------------------------------------------------------------------
+lexema | token
+
+public | reservada
+" " | ws
+class | reservada
+" " | ws
+Main | idt
+" " | ws
+{ | llave
+\n | ws
+\t | ws
+public | reservada
+" " | ws
+static | reservada
+" " | ws
+void | reservada
+" " | ws
+main | idt
+( | parentesis
+String | reservada
+[ | corchete
+] | corchete
+" " | ws
+args | idt
+) | parentesis
+" " | espacio
+{ | llave
+\n | ws
+\t | ws
+\t | ws
+int | reservada
+" " | ws
+numero1 | idt
+" " | ws
+= | asignacion
+" " | ws
+15 | num
+; | semicolon
+\n | ws
+\t | ws
+\t |ws
+int | reservada
+" " | ws
+numero2 | idt
+" " | ws
+= | asignacion
+" " | ws
+3 | num
+; | semicolon
+\n | ws
+\n | ws
+\t | ws
+\t |ws
+int | reservada
+" " | ws
+resultado | idt
+" " | ws
+= | asignacion
+" " | ws
+numero1 | idt
++ | suma
+numero2 | idt
+; | semicolon
+\n | ws
+\n | ws
+\t | ws
+\t |ws
+System | idt
+. | punto
+out | idt
+. | punto
+println | idt
+( | parentesis
+"El resultado es: " | str
+" " | ws
++ | suma
+" " | ws
+resultado | idt
+) | parentesis
+; | semicolon
+\n | ws
+\t | ws
+} | llave
+\n | ws
+} | llave
