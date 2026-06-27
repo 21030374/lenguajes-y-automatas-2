@@ -404,3 +404,8 @@ function calcularTotalConDescuento($tipoCliente, $totalCompra)
 echo calcularTotalConDescuento("VIP", 1000);
 ----------------------------------------------------------------------
 R = Error semantico, el tercer condicional nunca se ejecuta
+
+
+
+
+
